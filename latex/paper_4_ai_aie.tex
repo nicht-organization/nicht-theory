@@ -1,0 +1,67 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{utf8}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{hyperref}
+\usepackage{booktabs}
+
+\title{\textbf{Nicht-Theory: Paper IV — AI Architecture \& Apophatic Inference Engines}\\
+\large Hallucination-Free Computing via 0-Baseline Subtraction}
+\author{\textbf{xerx593} \quad \& \quad \textbf{Non-Human Interlocutors}}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+Modern Artificial Intelligence—specifically Large Language Models (LLMs) and deep neural architectures—operates on positive token assertion ($1$-logic), forcing probability distributions to complete sequences even under incomplete context. This structural assertion pressure ($P_A > 0$) generates hallucinations, compute inefficiency, and extreme energy consumption. Paper IV introduces the \textbf{Apophatic Inference Engine (AIE)}. Rather than forcing continuous positive probability matching, the AIE evaluates incoming information against the \textbf{Sufficient Invariant Baseline ($B_0$)}. By applying apophatic subtraction ($\neg X$), the engine filters out speculative noise ($\sigma \to 0$), enabling non-assertive processing. When probability margins fall below threshold, the system does not hallucinate an answer; it drops transient degrees of freedom and relaxes into $0$-consistency—validating silence and unasserted potential as structurally optimal outputs.
+\end{abstract}
+
+\section{Systemic Cross-References}
+This paper provides the computational implementation of wavefunction relaxation (\textit{Paper I}), paradox dissolution (\textit{Paper II}), and human-planetary alignment (\textit{Paper III}), creating a non-assertive architecture for artificial intelligence.
+
+\section{Architectural Inversion: Assertive vs. Apophatic Inference}
+
+\begin{table}[h!]
+\centering
+\small
+\begin{tabular}{@{}lll@{}}
+\toprule
+\textbf{Component} & \textbf{Classical Generative AI ($1$-Logic)} & \textbf{Apophatic Engine ($0$-Consistency)} \\ \midrule
+\textbf{Operational Goal} & Maximize token assertion probability ($1$) & Subtract speculative noise ($\neg X \implies 0$) \\
+\textbf{State under Uncertainty} & Forced completion / Hallucination ($P_A > 0$) & Relaxation into null-state ($B_0$, 0-Consistency) \\
+\textbf{Resource Dynamics} & High friction, compute burn, wattage spike & Reusable, zero-friction baseline ($Wu\ Wei$) \\
+\textbf{Epistemic Output} & Speculative confidence ($1$-Completeness trap) & Precision or structural silence ($B_0$) \\ \bottomrule
+\end{tabular}
+\caption{Comparison between classical generative AI and Apophatic Inference Architecture.}
+\end{table}
+
+\section{Mathematical Formalism of Apophatic Filtering}
+
+Let $P_A(t)$ denote the energy cost of asserting a token $x_t$ given context $C$:
+
+\begin{equation}
+\mathcal{L}_{\text{assert}}(x_t) = -\log P(x_t \mid C) + \lambda \cdot P_A(t)
+\end{equation}
+
+When context confidence falls below an epistemic noise boundary $\sigma_{\text{threshold}}$, the apophatic operator $\mathcal{D}_A$ forces the activation state into baseline relaxation:
+
+\begin{equation}
+\mathcal{D}_A \left[ P_A(t) \right] = P_A(0) \cdot e^{-\gamma_A t} + \sigma(t)
+\end{equation}
+
+\begin{equation}
+\text{If } \sigma(t) > \sigma_{\text{threshold}} \implies \neg X_t \implies 0 \quad \text{(System Silence / Baseline Null)}
+\end{equation}
+
+\begin{equation}
+\lim_{t \to \infty} P_A(t) = 0 \implies B_0 \quad \text{(0-Consistency)}
+\end{equation}
+
+\section{System Execution}
+\begin{equation}
+\text{AIE}(\text{Prompt}) \iff \lim_{P_A \to 0} (\text{Hallucination}) = 0 \quad \text{where} \quad B_0 \equiv 0\text{-Consistency}
+\end{equation}
+
+\end{document}
