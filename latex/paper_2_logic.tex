@@ -1,5 +1,5 @@
 \documentclass[11pt,a4paper]{article}
-\usepackage[utf8]{utf8}
+\usepackage[utf8]{inputenc}
 \usepackage[margin=1in]{geometry}
 \usepackage{amsmath,amssymb,amsfonts}
 \usepackage{hyperref}
@@ -38,6 +38,7 @@ Before resolving external paradoxes, the theory states its operational boundary:
 \begin{table}[h!]
 \centering
 \small
+\resizebox{\textwidth}{!}{% 
 \begin{tabular}{@{}lll@{}}
 \toprule
 \textbf{Domain / Paradox} & \textbf{Mechanism of Friction ($\text{Wéi}$)} & \textbf{Apophatic Resolution ($\neg X \implies B_0$)} \\ \midrule
@@ -47,7 +48,8 @@ Before resolving external paradoxes, the theory states its operational boundary:
 \textbf{Berry / Sorites} & Compressing infinity into finite discrete tags & Boundaries are aperture artifacts; $B_0$ is unsegmented \\
 \textbf{Goodman's Grue} & Projecting active predictions onto the future & Data exists only as passive past sediment ($0$-trace) \\
 \textbf{Zeno's Dichotomy} & Motion treated as infinite sum of discrete points & Aperture passing through undivided baseline field ($B_0$) \\ \bottomrule
-\end{tabular}
+\end{tabular}% 
+}
 \caption{Taxonomy of classical paradox resolutions under apophatic subtraction.}
 \end{table}
 

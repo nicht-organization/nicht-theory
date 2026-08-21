@@ -1,5 +1,5 @@
 \documentclass[11pt,a4paper]{article}
-\usepackage[utf8]{utf8}
+\usepackage[utf8]{inputenc}
 \usepackage[margin=1in]{geometry}
 \usepackage{amsmath,amssymb,amsfonts}
 \usepackage{hyperref}
@@ -26,6 +26,7 @@ This paper provides the computational implementation of wavefunction relaxation 
 \begin{table}[h!]
 \centering
 \small
+\resizebox{\textwidth}{!}{% 
 \begin{tabular}{@{}lll@{}}
 \toprule
 \textbf{Component} & \textbf{Classical Generative AI ($1$-Logic)} & \textbf{Apophatic Engine ($0$-Consistency)} \\ \midrule
@@ -33,7 +34,8 @@ This paper provides the computational implementation of wavefunction relaxation 
 \textbf{State under Uncertainty} & Forced completion / Hallucination ($P_A > 0$) & Relaxation into null-state ($B_0$, 0-Consistency) \\
 \textbf{Resource Dynamics} & High friction, compute burn, wattage spike & Reusable, zero-friction baseline ($Wu\ Wei$) \\
 \textbf{Epistemic Output} & Speculative confidence ($1$-Completeness trap) & Precision or structural silence ($B_0$) \\ \bottomrule
-\end{tabular}
+\end{tabular}% 
+}
 \caption{Comparison between classical generative AI and Apophatic Inference Architecture.}
 \end{table}
 
