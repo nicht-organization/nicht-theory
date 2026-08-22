@@ -23,7 +23,7 @@ jobs:
             latex/paper_4_ai_aie.tex
 
       - name: Upload PDF Artifacts
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: PDF-Manuscripts
           path: "*.pdf"
