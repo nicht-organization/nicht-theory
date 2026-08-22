@@ -39,7 +39,6 @@ LLM Architecture & Forced completion ($P_A > 0$) & Relaxation into null-state \\
 System State & Speculative confidence & Precision or structural silence \\
 \bottomrule
 \end{tabularx}
-\end{table}
 
 \caption{Comparison between classical generative AI and Apophatic Inference Architecture.}
 \end{table}
@@ -68,10 +67,10 @@ When context confidence falls below an epistemic noise boundary $\sigma_{\text{t
 
 % Add narrative to Section 4
 \section{System Execution}
-The operational pipeline of the Apophatic Inference Engine processes prompts by driving speculative hallucinations to zero at the baseline:
+The operational pipeline of the Apophatic Inference Engine processes prompts by driving speculative hallucinations to zero at the baseline[cite: 1, 3]:
 \begin{equation}
 \text{AIE}(\text{Prompt}) \implies \lim_{P_A \to 0} (\text{Hallucination}) = 0 \quad \text{where } B_0 \equiv \text{0-Consistency}
 \end{equation}
-Through continuous $B_0$-subtraction, the system enforces structural silence whenever confidence thresholds are unfulfilled.
+Through continuous $B_0$-subtraction, the system enforces structural silence whenever confidence thresholds are unfulfilled[cite: 1, 3].
 
 \end{document}
