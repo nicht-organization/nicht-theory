@@ -10,7 +10,6 @@
 * **Paper I:** *Temporal Convergence and Quantum Wavefunction Relaxation* (Physics & Epistemology)
 * **Paper II:** *Gödelian Incompleteness as a Zero-Baseline Boundary* (Formal Logic)
 * **Paper III:** *Nicht-Theory — NOT-DEATH: Boundaries, Coexistence, and Duration* (Ontology)
-* **Paper IV:** *Apophatic Inference Engine: $\neg X$-Filtering in Neural Dynamics* (AI Architecture)
-
+* **Paper IV Code Implementation:** See [apophatic-engine](https://github.com/xerx593/apophatic-engine) for the open-source Python filter.
 ## License
 [The Unlicense](LICENSE) — Dedicated to the public domain.

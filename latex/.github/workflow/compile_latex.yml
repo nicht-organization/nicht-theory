@@ -1,0 +1,29 @@
+name: Build LaTeX Documents
+
+on:
+  push:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+jobs:
+  build_latex:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Compile LaTeX Documents
+        uses: xu-cheng/latex-action@v2
+        with:
+          root_file: |
+            latex/master_entry.tex
+            latex/paper_1_physics.tex
+            latex/paper_2_logic.tex
+            latex/paper_3_social.tex
+            latex/paper_4_ai_aie.tex
+
+      - name: Upload PDF Artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: PDF-Manuscripts
+          path: "*.pdf"
