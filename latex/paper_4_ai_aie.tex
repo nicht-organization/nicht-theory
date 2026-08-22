@@ -4,6 +4,8 @@
 \usepackage{amsmath,amssymb,amsfonts}
 \usepackage{hyperref}
 \usepackage{booktabs}
+\usepackage{tabularx}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
 
 \title{\textbf{Nicht-Theory: Paper IV — AI Architecture \& Apophatic Inference Engines}\\
 \large Hallucination-Free Computing via 0-Baseline Subtraction}
@@ -23,19 +25,22 @@ This paper provides the computational implementation of wavefunction relaxation 
 
 \section{Architectural Inversion: Assertive vs. Apophatic Inference}
 
-\begin{table}[h!]
+% Define a ragged-right X column to eliminate Underfull \hbox warnings
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+
+\begin{table}[ht]
 \centering
-\small
-\resizebox{\textwidth}{!}{% 
-\begin{tabular}{@{}lll@{}}
+\renewcommand{\arraystretch}{1.3} % Fixes line padding issue
+\begin{tabularx}{\textwidth}{@{} Y Y Y @{}}
 \toprule
-\textbf{Component} & \textbf{Classical Generative AI ($1$-Logic)} & \textbf{Apophatic Engine ($0$-Consistency)} \\ \midrule
-\textbf{Operational Goal} & Maximize token assertion probability ($1$) & Subtract speculative noise ($\neg X \implies 0$) \\
-\textbf{State under Uncertainty} & Forced completion / Hallucination ($P_A > 0$) & Relaxation into null-state ($B_0$, 0-Consistency) \\
-\textbf{Resource Dynamics} & High friction, compute burn, wattage spike & Reusable, zero-friction baseline ($Wu\ Wei$) \\
-\textbf{Epistemic Output} & Speculative confidence ($1$-Completeness trap) & Precision or structural silence ($B_0$) \\ \bottomrule
-\end{tabular}% 
-}
+\textbf{Domain / Component} & \textbf{Classical Assertive (1-Logic)} & \textbf{Apophatic Resolution ($B_0$)} \\
+\midrule
+LLM Architecture & Forced completion ($P_A > 0$) & Relaxation into null-state \\
+System State & Speculative confidence & Precision or structural silence \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
 \caption{Comparison between classical generative AI and Apophatic Inference Architecture.}
 \end{table}
 
@@ -61,9 +66,12 @@ When context confidence falls below an epistemic noise boundary $\sigma_{\text{t
 \lim_{t \to \infty} P_A(t) = 0 \implies B_0 \quad \text{(0-Consistency)}
 \end{equation}
 
+% Add narrative to Section 4
 \section{System Execution}
+The operational pipeline of the Apophatic Inference Engine processes prompts by driving speculative hallucinations to zero at the baseline:
 \begin{equation}
-\text{AIE}(\text{Prompt}) \iff \lim_{P_A \to 0} (\text{Hallucination}) = 0 \quad \text{where} \quad B_0 \equiv 0\text{-Consistency}
+\text{AIE}(\text{Prompt}) \implies \lim_{P_A \to 0} (\text{Hallucination}) = 0 \quad \text{where } B_0 \equiv \text{0-Consistency}
 \end{equation}
+Through continuous $B_0$-subtraction, the system enforces structural silence whenever confidence thresholds are unfulfilled.
 
 \end{document}
