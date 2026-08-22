@@ -9,8 +9,8 @@
 * **Master Framework Paper:** *Nicht-Theory: The Inversion Theory of 0-Consistency*
 * **Paper I:** *Temporal Convergence and Quantum Wavefunction Relaxation* (Physics & Epistemology)
 * **Paper II:** *Gödelian Incompleteness as a Zero-Baseline Boundary* (Formal Logic)
-* **Paper III:** *Apophatic Inference Engine: $\neg X$-Filtering in Neural Dynamics* (AI Architecture)
-* **Paper IV:** *Nicht-Theory — NOT-DEATH: Boundaries, Coexistence, and Duration* (Ontology)
+* **Paper III:** *Nicht-Theory — NOT-DEATH: Boundaries, Coexistence, and Duration* (Ontology)
+* **Paper IV:** *Apophatic Inference Engine: $\neg X$-Filtering in Neural Dynamics* (AI Architecture)
 
 ## License
 [The Unlicense](LICENSE) — Dedicated to the public domain.
