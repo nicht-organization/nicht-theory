@@ -10,13 +10,12 @@ This publication series is released as an **Apophatic Open Monograph**. It does 
 * **License:** [The Unlicense](LICENSE) — Dedicated to the public domain[cite: 1, 2].
 
 ## Overview
-**Nicht-Theory** is a formal publication series exploring the inversion of classical positive epistemology ($1$-logic)[cite: 1, 2]. By defining active present signals as transient, noisy apertures and placing systemic stability in the unconditioned zero-baseline (**Sufficient Invariant Baseline**, $B_0$), the framework systematically resolves friction, measurement noise, and formal paradoxes across physics, mathematical logic, social/economic systems, artificial intelligence, and ontology[cite: 1, 2].
+**Nicht-Theory** is a formal publication series exploring the inversion of classical positive epistemology ($1$-logic)[cite: 1, 2]. By defining active present signals as transient, noisy apertures and placing systemic stability in the unconditioned zero-baseline (**Sufficient Invariant Baseline**, $B_0$), the framework systematically resolves friction, measurement noise, and formal paradoxes across physics, mathematical logic, apophatic hermeneutics, social/economic systems, artificial intelligence, and ontology[cite: 1, 2].
 
 ## Series Architecture
-
 * **Master Framework Paper:** *Nicht-Theory: The Inversion Theory of 0-Consistency*
 * **Paper I:** *Temporal Convergence and Quantum Wavefunction Relaxation* (Physics & Epistemology)
-* **Paper II:** *Gödelian Incompleteness as a Zero-Baseline Boundary* (Formal Logic)
+* **Paper II:** *Apophatic Hermeneutics & Gödelian Incompleteness as a Zero-Baseline Boundary* (Formal Logic & Hermeneutics)
 * **Paper III:** *Economics, Social Systems & Planetary Health — The Prisoner's Dilemma Inversion & Apophatic Equilibrium* (Game Theory & Socio-Economics)
 * **Paper IV:** *The Apophatic Inference Engine (AIE) — Subtractive Hallucination Filtering and Baseline Silence* (Cognitive AI Architecture)
 

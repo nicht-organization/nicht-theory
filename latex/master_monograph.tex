@@ -4,6 +4,7 @@
 \usepackage{amsmath,amssymb,amsfonts}
 \usepackage{hyperref}
 \usepackage{booktabs}
+\usepackage{subfiles}
 
 \title{\Huge \textbf{Nicht-Theory: The Inversion Monograph}\\
 \large A Master Compendium of 0-Consistency and Apophatic Subtraction ($\neg X$)}
@@ -14,28 +15,31 @@
 
 \maketitle
 
+\pagenumbering{roman}
 \tableofcontents
+\clearpage
+\pagenumbering{arabic}
 
 \chapter*{Preface \& Open Status Notice}
 \addcontentsline{toc}{chapter}{Preface \& Open Status Notice}
 This publication series is released as an Apophatic Open Monograph. It does not claim closed formal completeness ($1$-completeness). All manuscripts remain open to subtractive refinement, empirical testing, and collaborative expansion.
 
 \chapter{Master Framework: The Inversion Theory of 0-Consistency}
-\input{master_entry.tex}
+\subfile{master_entry}
 
 \chapter{Paper I: Physics \& Epistemology}
-\input{paper_1_physics.tex}
+\subfile{paper_1_physics}
 
 \chapter{Paper II: Gödelian Incompleteness \& Formal Logic}
-\input{paper_2_logic.tex}
+\subfile{paper_2_logic}
 
 \chapter{Paper III: Socio-Economic Systems \& Wu Wei Equilibrium}
-\input{paper_3_social.tex}
+\subfile{paper_3_social}
 
 \chapter{Paper IV: Cognitive AI Architecture \& Inference Engines}
-\input{paper_4_ai_aie.tex}
+\subfile{paper_4_ai_aie}
 
 \chapter{Paper V: Hermeneutics, Language \& Art}
-\input{paper_5_hermeneutics.tex}
+\subfile{paper_5_hermeneutics}
 
 \end{document}
