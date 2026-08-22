@@ -1,59 +1,38 @@
 #!/usr/bin/env bash
+# ==============================================================================
+# Nicht-Theory — Monograph Local Clean & Double-Build Script
+# ==============================================================================
 set -euo pipefail
 
 echo "=== 1. Hard Cleanup of Build Artifacts ==="
 rm -f latex/*.aux latex/*.log latex/*.out latex/*.toc latex/*.synctex.gz latex/*.fls latex/*.fdb_latexmk latex/*.bbl latex/*.bcf latex/*.blg 2>/dev/null || true
 
-echo "=== 2. Compiling All Papers & Monograph ==="
+echo "=== 2. Compiling Master Monograph (Pass 1 & Pass 2) ==="
 
 if [ -d "latex" ]; then
     cd latex
 fi
 
-PAPERS=(
-    "master_entry.tex"
-    "paper_1_physics.tex"
-    "paper_2_logic.tex"
-    "paper_3_social.tex"
-    "paper_4_ai_aie.tex"
-    "paper_5_hermeneutics.tex"
-    "master_monograph.tex"
-)
+TARGET="master_monograph.tex"
 
-for f in "${PAPERS[@]}"; do
-    echo "----------------------------------------"
-    echo "Building $f ..."
-    
-    if [ ! -f "$f" ]; then
-        echo "--> NOTICE: $f not found, skipping..."
-        continue
-    fi
+if [ ! -f "$TARGET" ]; then
+    echo "--> ERROR: $TARGET not found in $(pwd)!"
+    exit 1
+fi
 
-    BASE="${f%.tex}"
+echo "--> Pass 1/2: Generating initial layout and table of contents..."
+pdflatex -interaction=nonstopmode "$TARGET" > /dev/null 2>&1 || true
 
-    # Pass 1: Initial PDF & AUX generation
-    pdflatex -interaction=nonstopmode "$f" > /dev/null 2>&1 || true
-
-    # Pass 2: Bibliography resolution (Biber or BibTeX)
-    if [ -f "${BASE}.bcf" ] && command -v biber &>/dev/null; then
-        biber "$BASE" > /dev/null 2>&1 || true
-    elif [ -f "${BASE}.aux" ] && command -v bibtex &>/dev/null; then
-        bibtex "$BASE" > /dev/null 2>&1 || true
-    fi
-
-    # Pass 3 & 4: Cross-reference & Bib compilation
-    pdflatex -interaction=nonstopmode "$f" > /dev/null 2>&1 || true
-    
-    if pdflatex -interaction=nonstopmode "$f" > /dev/null 2>&1; then
-        echo "--> SUCCESS: $f rendered!"
+echo "--> Pass 2/2: Resolving cross-references and hyperref targets..."
+if pdflatex -interaction=nonstopmode "$TARGET" > /dev/null 2>&1; then
+    echo "========================================"
+    echo "--> SUCCESS: master_monograph.pdf compiled cleanly!"
+    echo "========================================"
+else
+    if [ -f "master_monograph.pdf" ]; then
+        echo "--> WARNING: master_monograph.pdf generated with minor warnings."
     else
-        if [ -f "${BASE}.pdf" ]; then
-            echo "--> WARNING: $f compiled with minor issues (PDF generated: ${BASE}.pdf)"
-        else
-            echo "--> ERROR: $f failed to compile!"
-        fi
+        echo "--> ERROR: master_monograph.pdf failed to compile!"
+        exit 1
     fi
-done
-
-echo "========================================"
-echo "Build process complete!"
+fi
