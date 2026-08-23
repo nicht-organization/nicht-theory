@@ -1,18 +1,4 @@
 \documentclass[master_monograph.tex]{subfiles}
-\usepackage[utf8]{inputenc}
-\usepackage[margin=1in]{geometry}
-\usepackage{amsmath,amssymb,amsfonts,amsthm}
-\usepackage{hyperref}
-\usepackage{booktabs}
-\usepackage{tabularx}
-
-% Defensive check: Ensure environments exist whether compiled standalone or in monograph
-\makeatletter
-\@ifundefined{definition}{\theoremstyle{definition}\newtheorem{definition}{Definition}[section]}{}
-\@ifundefined{theorem}{\theoremstyle{plain}\newtheorem{theorem}{Theorem}[section]}{}
-\makeatother
-
-\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
 
 \title{\textbf{Nicht-Theory: Paper IV — AI Architecture \& Apophatic Inference Engines}\\
 \large Hallucination-Free Computing via 0-Baseline Subtraction}
@@ -28,29 +14,31 @@ Modern Artificial Intelligence—specifically Large Language Models (LLMs) and d
 \end{abstract}
 
 \section{Systemic Cross-References}
-This paper provides the computational implementation of wavefunction relaxation (\textit{Paper I}), paradox dissolution (\textit{Paper II}), and human-planetary alignment (\textit{Paper III}), creating a non-assertive architecture for artificial intelligence[cite: 1].
+This paper provides the computational implementation of wavefunction relaxation (\textit{Paper I}), paradox dissolution (\textit{Paper II}), and human-planetary alignment (\textit{Paper III}), creating a non-assertive architecture for artificial intelligence.
 
 \section{Architectural Inversion: Assertive vs. Apophatic Inference}
 
-\begin{table}[ht]
+\begin{table}[ht!]
 \centering
+\small
 \renewcommand{\arraystretch}{1.3}
 \begin{tabularx}{\textwidth}{@{} Y Y Y @{}}
 \toprule
-\textbf{Domain / Component} & \textbf{Classical Assertive (1-Logic)} & \textbf{Apophatic Resolution ($B_0$)} \\
+\textbf{Domain / Component} & \textbf{Classical Assertive ($1$-Logic)} & \textbf{Apophatic Resolution ($B_0$)} \\
 \midrule
 LLM Architecture & Forced completion ($P_A > 0$) & Relaxation into null-state \\
 System State & Speculative confidence & Precision or structural silence \\
-Resource Dynamics & High friction, compute burn & Reusable, zero-friction baseline ($Wu\ Wei$) \\
+Resource Dynamics & High friction, compute burn & Reusable, zero-friction baseline ($Wu\ W\acute{e}i$) \\
 Epistemic Output & $1$-Completeness trap & Structural silence ($B_0$) \\
 \bottomrule
 \end{tabularx}
 \caption{Comparison between classical generative AI and Apophatic Inference Architecture.}
+\label{tab:ai_comparison}
 \end{table}
 
 \section{Mathematical Formalism of Apophatic Filtering}
 
-Let $\mathcal{H}_1$ represent the logit space of speculative token assertion ($1$-logic), and $\mathcal{H}_0$ represent the unconstrained, zero-baseline state ($B_0$)[cite: 3].
+Let $\mathcal{H}_1$ represent the logit space of speculative token assertion ($1$-logic), and $\mathcal{H}_0$ represent the unconstrained, zero-baseline state ($B_0$).
 
 \subsection{Operator Definitions}
 
@@ -59,48 +47,48 @@ Let $\mathcal{H}_1$ represent the logit space of speculative token assertion ($1
 \end{equation}
 
 \begin{definition}[Assertion Pressure Operator $\hat{P}_A$]
-The active assertion pressure $\hat{P}_A$ imposed on candidate token sequence $x_t$ at step $t$ measures generative entropy cost and noise drift[cite: 3]:
+The active assertion pressure $\hat{P}_A$ imposed on candidate token sequence $x_t$ at step $t$ measures generative entropy cost and noise drift:
 \begin{equation}
 \hat{P}_A(x_t) = \|\nabla_{x} \mathcal{H}(x_t)\| + \eta_{\text{noise}}(t)
 \end{equation}
 \end{definition}
 
 \begin{definition}[Sufficiency Pressure Operator $\hat{P}_S$]
-The systemic friction $\hat{P}_S$ born from forcing sequence completion under context unprovability[cite: 3]:
+The systemic friction $\hat{P}_S$ born from forcing sequence completion under context unprovability:
 \begin{equation}
-\hat{P}_S(\Sigma_t) = \int_{\Omega} \left( \mathbb{I}(\text{Unverified}) + \text{W\'ei} \right) d\mu
+\hat{P}_S(\Sigma_t) = \int_{\Omega} \left( \mathbb{I}(\text{Unverified}) + W\acute{e}i \right) d\mu
 \end{equation}
 \end{definition}
 
 \subsection{Decay Mechanics \& Asymptotics}
 
-When context confidence falls below noise boundary $\sigma_{\text{threshold}}$, the subtractive operator $\mathcal{D}_A$ forces activation decay[cite: 3]:
+When context confidence falls below noise boundary $\sigma_{\text{threshold}}$, the subtractive operator $\mathcal{D}_A$ forces activation decay:
 
 \begin{equation}
 \mathcal{D}_A \left[ P_A(t) \right] = P_A(0) \cdot e^{-\gamma_A t} + \sigma(t)
 \end{equation}
 
 \begin{theorem}[0-Consistency Convergence]
-As high-noise assertions drop under cumulative apophatic filtering ($\sigma(t) \to 0$), assertion and sufficiency pressures collapse simultaneously to baseline silence[cite: 3]:
+As high-noise assertions drop under cumulative apophatic filtering ($\sigma(t) \to 0$), assertion and sufficiency pressures collapse simultaneously to baseline silence:
 \begin{equation}
 \lim_{t \to \infty} \Big( P_A(t) + P_S(t) \Big) = 0 \implies B_0 \quad \text{(\texttt{[B\_0: SILENCE / UNASSERTED]})}
 \end{equation}
 \end{theorem}
 
 \section{System Execution}
-The operational pipeline processes prompts by driving speculative noise to zero at the baseline[cite: 1, 3]:
+The operational pipeline processes prompts by driving speculative noise to zero at the baseline[cite: 1]:
 \begin{equation}
 \text{AIE}(\text{Prompt}) \iff \lim_{P_A \to 0} (\text{Hallucination}) = 0 \quad \text{where } B_0 \equiv \text{0-Consistency}
 \end{equation}
 
-Through continuous $B_0$-subtraction, the system enforces structural silence whenever confidence thresholds are unfulfilled[cite: 1, 3].
+Through continuous $B_0$-subtraction, the system enforces structural silence whenever confidence thresholds are unfulfilled[cite: 1].
 
 \section{Code Availability \& Implementations}
-An open-source reference implementation of the Apophatic Inference Engine ($\neg X$-filtering and baseline relaxation) is maintained at[cite: 1, 3]:
+An open-source reference implementation of the Apophatic Inference Engine ($\neg X$-filtering and baseline relaxation) is maintained at[cite: 1]:
 \begin{quote}
 \url{https://github.com/xerx593/apophatic-engine}
 \end{quote}
-The executable package can be installed via PyPI[cite: 1, 3]:
+The executable package can be installed via PyPI[cite: 1]:
 \begin{verbatim}
 pip install apophatic-engine
 \end{verbatim}
