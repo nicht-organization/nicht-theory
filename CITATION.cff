@@ -8,6 +8,9 @@ authors:
     orcid: "https://orcid.org/0009-0009-0820-0502"
   - name: "Non-Human Interlocutors"
     affiliation: "Apophatic Dialogue Baseline (B₀)"
+doi: "10.5281/zenodo.22067674"
+version: "1.0.0"
+date-released: "2026-08-23"
 repository-code: "https://github.com/xerx593/nicht-theory"
 url: "https://github.com/xerx593/nicht-theory"
 license: "Unlicense"
@@ -19,5 +22,3 @@ keywords:
   - godel-boundary
   - zero-baseline
   - non-assertion
-version: "0.2.0-alpha"
-date-released: "2026-08-23"
