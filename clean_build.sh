@@ -1,7 +1,4 @@
 #!/usr/bin/env bash
-# ==============================================================================
-# Nicht-Theory — Monograph Local Clean & Double-Build Script
-# ==============================================================================
 set -euo pipefail
 
 echo "=== 1. Hard Cleanup of Build Artifacts ==="

@@ -1,4 +1,4 @@
-name: Build & Publish LaTeX Manuscripts
+name: Build LaTeX Documents
 
 on:
   push:
@@ -12,20 +12,20 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-      - name: Compile Monograph & Individual Manuscripts
+      - name: Compile LaTeX Documents & Monograph
         uses: xu-cheng/latex-action@v4
         with:
           working_directory: latex
           root_file: |
-            master_monograph.tex
             master_entry.tex
             paper_1_physics.tex
             paper_2_logic.tex
             paper_3_social.tex
             paper_4_ai_aie.tex
             paper_5_hermeneutics.tex
+            master_monograph.tex
 
-      - name: Upload PDF Release Artifacts
+      - name: Upload PDF Artifacts
         uses: actions/upload-artifact@v4
         with:
           name: Compiled-Manuscripts
