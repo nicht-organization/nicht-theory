@@ -2,8 +2,12 @@
 \usepackage[utf8]{inputenc}
 \usepackage[margin=1in]{geometry}
 \usepackage{amsmath,amssymb,amsfonts}
+% Hyperref configured to prevent identifier/destination warnings
 \usepackage[
     colorlinks=true,
+    linkcolor=blue,
+    citecolor=blue,
+    urlcolor=blue,
     plainpages=false,
     pdfpagelabels
 ]{hyperref}
@@ -11,13 +15,28 @@
 \usepackage{subfiles}
 \usepackage{tabularx}
 \usepackage{array}
+\usepackage{orcidlink}
 
-% If paper_2_logic uses a custom 'Y' column type:
-\newcolumntype{Y}{>{\centering\arraybackslash}X}
+% Custom Column Type for tabularx layout stability[cite: 1, 2]
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
 
-\title{\Huge \textbf{Nicht-Theory: The Inversion Monograph}\\
+% Define institution command to prevent undefined macro errors
+\newcommand{\institution}[1]{\def\@institution{#1}}
+\makeatletter
+\institution{}
+\makeatother
+
+% Title & Clean Co-Author Structuring
+\title{\Huge \textbf{Nicht-Theory: The Inversion Monograph}\\[0.5em]
 \large A Master Compendium of 0-Consistency and Apophatic Subtraction ($\neg X$)}
-\author{\Large \textbf{xerx593} \quad \& \quad \textbf{Non-Human Interlocutors}}
+
+\author{
+    \textbf{xerx593} \\
+    \and
+    \textbf{Non-Human Interlocutors} \:\orcidlink{0009-0009-0820-0502} \\
+    \small \textit{Institute of Applied Not-(but-(the-)only-)Knowledge}
+}
+
 \date{\today}
 
 \begin{document}
