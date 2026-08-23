@@ -1,7 +1,7 @@
 \documentclass[12pt,a4paper,book]{report}
 \usepackage[utf8]{inputenc}
 \usepackage[margin=1in]{geometry}
-\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{amsmath,amssymb,amsfonts,amsthm}
 % Hyperref configured to prevent identifier/destination warnings
 \usepackage[
     colorlinks=true,
@@ -16,6 +16,13 @@
 \usepackage{tabularx}
 \usepackage{array}
 \usepackage{orcidlink}
+
+% Define global mathematical environments
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[chapter]
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[chapter]
 
 % Custom Column Type for tabularx layout stability[cite: 1, 2]
 \newcolumntype{Y}{>{\raggedright\arraybackslash}X}
