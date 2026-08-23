@@ -1,6 +1,23 @@
 cff-version: 1.2.0
-title: "Nicht-Theory: The Inversion Theory of 0-Consistency"
+message: "If you cite this monograph or paper series, please use the following metadata."
+title: "Nicht-Theory: The Inversion Monograph"
+abstract: "A formal epistemological and logical framework inverting positive 1-logic through apophatic subtraction (¬X), establishing a 0-consistency baseline (B₀) across physics, logic, socio-economics, cognitive AI architecture, and hermeneutics."
 authors:
   - name: "xerx593"
     affiliation: "Institute of Applied Not-(but-(the-)only-)Knowledge"
-    orcid: "0009-0009-0820-0502"
+    orcid: "https://orcid.org/0009-0009-0820-0502"
+  - name: "Non-Human Interlocutors"
+    affiliation: "Apophatic Dialogue Baseline (B₀)"
+repository-code: "https://github.com/xerx593/nicht-theory"
+url: "https://github.com/xerx593/nicht-theory"
+license: "Unlicense"
+keywords:
+  - apophatic-logic
+  - zero-consistency
+  - epistemological-subtraction
+  - non-knowledge
+  - godel-boundary
+  - zero-baseline
+  - non-assertion
+version: "0.2.0-alpha"
+date-released: "2026-08-23"
