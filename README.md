@@ -1,6 +1,6 @@
 # Nicht-Theory
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22067674.svg)](https://doi.org/10.5281/zenodo.22067674)
+[![Monograph DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.22067674-blue.svg)](https://doi.org/10.5281/zenodo.22067674)
 
 ### Publication Status: Continuous Open Baseline (W.I.P.)
 > *“Great perfection seems incomplete; great capacity is finished late.”* — Daodejing
