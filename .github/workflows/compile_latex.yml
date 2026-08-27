@@ -12,6 +12,33 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
+      - name: Extract Release Date from CITATION.cff
+        run: |
+          python3 -c "
+          import re, os
+          from datetime import datetime
+
+          date_val = '\\\\today'
+          if os.path.exists('CITATION.cff'):
+              with open('CITATION.cff', 'r', encoding='utf-8') as f:
+                  for line in f:
+                      m = re.match(r'^\s*date-released:\s*[\"\']?([^\"\'\n]+)[\"\']?', line)
+                      if m:
+                          raw_date = m.group(1).strip()
+                          try:
+                              dt = datetime.strptime(raw_date, '%Y-%m-%d')
+                              # Formats '2026-08-23' to 'August 23, 2026'
+                              date_val = dt.strftime('%B %d, %Y').replace(' 0', ' ')
+                          except ValueError:
+                              date_val = raw_date
+                          break
+
+          os.makedirs('latex', exist_ok=True)
+          with open('latex/latex_dates.tex', 'w', encoding='utf-8') as f:
+              f.write(f'\\\\newcommand{{\\\\cffreleasedate}}{{{date_val}}}\n')
+          "
+
+
       - name: Compile LaTeX Documents & Monograph
         uses: xu-cheng/latex-action@v4
         with:

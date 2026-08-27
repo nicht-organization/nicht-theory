@@ -44,7 +44,10 @@
     \small \textit{Institute of Applied Not-(but-(the-)only-)Knowledge}
 }
 
-\date{\today}
+\IfFileExists{latex_dates.tex}{\input{latex_dates.tex}}{}
+\providecommand{\cffreleasedate}{\today}
+
+\date{\cffreleasedate}
 
 \begin{document}
 
