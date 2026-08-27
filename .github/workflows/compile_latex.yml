@@ -25,7 +25,6 @@ jobs:
                           raw_date = m.group(1).strip()
                           try:
                               dt = datetime.strptime(raw_date, '%Y-%m-%d')
-                              # Formats '2026-08-23' to 'August 23, 2026'
                               date_val = dt.strftime('%B %d, %Y').replace(' 0', ' ')
                           except ValueError:
                               date_val = raw_date
@@ -33,9 +32,8 @@ jobs:
 
           os.makedirs('latex', exist_ok=True)
           with open('latex/latex_dates.tex', 'w', encoding='utf-8') as f:
-              f.write(f'\\\\newcommand{{\\\\cffreleasedate}}{{{date_val}}}\n')
+              f.write(f'\\\\providecommand{{\\\\cffreleasedate}}{{{date_val}}}\n')
           "
-
 
       - name: Compile LaTeX Documents & Monograph
         uses: xu-cheng/latex-action@v4
@@ -49,6 +47,7 @@ jobs:
             paper_4_ai_aie.tex
             paper_5_hermeneutics.tex
             master_monograph.tex
+          args: "-pdf -bibtex -file-line-error -interaction=nonstopmode"
 
       - name: Upload PDF Artifacts
         uses: actions/upload-artifact@v4
