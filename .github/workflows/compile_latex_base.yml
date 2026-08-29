@@ -1,0 +1,36 @@
+name: Build Latex Document Base
+on:
+  workflow_call:
+    inputs:
+      root-file:
+        description: 'The tex file to compile.'
+        required: true
+        type: string
+      working-dir:
+        description: 'The relative path of tex files (default latex/)'
+        default: 'latex'
+        required: false
+        type: string
+jobs:
+  build_latex:
+    if: ${{ github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref }}
+
+      - name: Compile LaTeX Documents
+        uses: xu-cheng/latex-action@v4
+        with:
+          working_directory: ${{ inputs.working-dir }}
+          root_file: |
+            ${{ inputs.root-file }}
+          args: "-pdf -bibtex -file-line-error -interaction=nonstopmode"
+
+      - name: Upload PDF Artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: Compiled-Manuscripts
+          path: latex/*.pdf
